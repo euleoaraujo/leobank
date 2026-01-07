@@ -1,0 +1,37 @@
+/* Overrides specific to Education Finance Page - Remove Black Borders */
+
+/* Make subheader full width */
+.fin-portfolio-page .sub-header {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.fin-portfolio-page .sub-header .container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 40px;
+}
+
+/* Ensure body has no constraining max-width */
+.fin-portfolio-page {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* Ensure hud-container doesn't constrain the hero */
+.fin-portfolio-page .hud-container {
+    max-width: none !important;
+    padding: 0 !important;
+}
+
+/* Adjust all sections within to respect max-width only for content */
+.fin-portfolio-page .hud-container>section:not(.hero-slide-section):not(.blog-slide-section) {
+    max-width: 1280px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 20px;
+    padding-right: 20px;
+}

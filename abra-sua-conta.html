@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abra sua conta - Leobank</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="internal-page">
+
+    <div class="sticky-header-wrapper">
+        <header class="auribank-header">
+            <div class="container">
+                <!-- Coluna 1: Logo -->
+                <div class="logo-column">
+                    <a href="index.html" class="logo">
+                        <img src="assets/img/logo-leobank.png" alt="Leobank" class="logo-img">
+                    </a>
+                </div>
+                <div class="header-actions">
+                    <!-- Simulação de elementos do header ocultos ou simplificados se necessário, ou mantemos igual a index -->
+                    <!-- Copiando estrutura exata da index para consistência -->
+                    <div class="login-wrapper">
+                        <div class="login-label-column">
+                            <span>Acesse sua conta</span>
+                        </div>
+                        <div class="input-column type-column">
+                            <select id="select-tipo-conta" class="mobile-only-select" aria-label="Tipo de Conta">
+                                <option value="pf">Pessoa Física</option>
+                                <option value="pj">Pessoa Jurídica</option>
+                            </select>
+                            <div class="custom-select" id="custom-select-desktop">
+                                <div class="select-trigger">
+                                    <span id="custom-select-value">Pessoa Física</span>
+                                    <i class="ph ph-caret-down"></i>
+                                </div>
+                                <div class="options-container">
+                                    <div class="option selected" data-value="pf">Pessoa Física</div>
+                                    <div class="option" data-value="pj">Pessoa Jurídica</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pj-inputs" class="inputs-group" style="display: none;">
+                            <span class="input-separator">|</span>
+                            <div class="input-column agency-column">
+                                <input type="text" id="agencia" placeholder="Agência" aria-label="Agência"
+                                    maxlength="4">
+                            </div>
+                            <span class="input-separator">|</span>
+                            <div class="input-column account-column">
+                                <input type="text" id="conta" placeholder="Conta" aria-label="Conta" maxlength="12">
+                            </div>
+                        </div>
+                        <div id="pf-inputs" class="inputs-group" style="display: flex;">
+                            <span class="input-separator">|</span>
+                            <div class="input-column cpf-column">
+                                <input type="text" id="cpf" placeholder="Insira seu CPF" aria-label="CPF"
+                                    maxlength="14">
+                            </div>
+                        </div>
+                        <button class="btn-enter" aria-label="Entrar">
+                            <span>Entrar</span>
+                            <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cta-column">
+                    <a href="abra-sua-conta.html" class="btn-open-account"><span>Abra sua conta</span></a>
+                    <a href="index.html" class="btn-back-home">
+                        <span>Voltar para o início</span> <i class="ph ph-house"></i>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <div class="hamburger-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </header>
+
+        <nav class="sub-header">
+            <div class="container">
+                <ul class="sub-header-menu">
+                    <li><a href="#abra-sua-conta-anchor">Abrir sua conta</a></li>
+                    <li><a href="#beneficios-leobank-anchor">Seus benefícios Leobank</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <main class="abra-conta-main">
+        <!-- NEW HERO SECTION: Cards + Form -->
+        <section class="hero-cards-section" id="abra-sua-conta-anchor">
+            <div class="container">
+                <div class="hero-cards-grid">
+                    <!-- Left: Cards Visual & Text -->
+                    <div class="hero-left-col">
+                        <img src="assets/img/cartoes-leobank.png" alt="Cartões Leobank" class="hero-cards-img">
+                        <p class="hero-legal-text">Sujeito a análise e aprovação de crédito.</p>
+                    </div>
+
+                    <!-- Right: Form Card -->
+                    <div class="hero-right-col">
+                        <div class="hero-form-card">
+                            <h1 class="form-title">Conta + Cartão Leobank<br>100% digital!</h1>
+                            <p class="form-subtitle">
+                                Aqui você escolhe o cartão que acumula pontos, cashback, milhas ou tem anuidade zero!
+                            </p>
+
+                            <!-- Account Type Selector -->
+                            <div class="account-type-selector">
+                                <!-- Hidden native select for form submission -->
+                                <select id="account-type-select-native" class="account-type-select-hidden"
+                                    name="account-type">
+                                    <option value="pf">Pessoa Física</option>
+                                    <option value="pj">Pessoa Jurídica</option>
+                                </select>
+
+                                <!-- Custom Select Display -->
+                                <div class="custom-select-hero" id="custom-select-hero">
+                                    <div class="select-trigger-hero">
+                                        <span id="custom-select-value-hero">Pessoa Física</span>
+                                        <i class="ph ph-caret-down"></i>
+                                    </div>
+                                    <div class="options-container-hero">
+                                        <div class="option-hero selected" data-value="pf">Pessoa Física</div>
+                                        <div class="option-hero" data-value="pj">Pessoa Jurídica</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cpf-input-group">
+                                <div class="input-icon-wrapper">
+                                    <i class="ph ph-identification-card input-icon" id="doc-icon"></i>
+                                    <input type="text" placeholder="Digite seu CPF" class="hero-cpf-input"
+                                        id="document-input" maxlength="18">
+                                </div>
+                                <button class="btn-hero-submit">
+                                    Clique aqui
+                                    <i class="ph ph-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 1: Aqui tem tudo que você precisa (Clean Layout) -->
+        <section class="section-tudo-que-precisa">
+            <div class="container">
+                <div class="layout-grid-3-col">
+                    <!-- Esquerda: Título Principal -->
+                    <div class="col-left">
+                        <h1 class="main-title">Aqui tem tudo que<br>você precisa</h1>
+                        <p class="main-subtitle">
+                            Desde segurança para seu<br>dinheiro até shop e descontos no<br>cinema e no teatro.
+                        </p>
+                        <div class="dash-separator"></div>
+                    </div>
+
+                    <!-- Centro: Imagem Celular -->
+                    <div class="col-center">
+                        <!-- Usando a nova imagem gerada -->
+                        <img src="assets/img/leobank-app-mockup.png" alt="App Leobank com Mimos"
+                            class="app-mockup-main">
+                    </div>
+
+                    <!-- Direita: Detalhes -->
+                    <div class="col-right">
+                        <h2 class="sub-title-highlight">Conta-corrente<br>Leobank</h2>
+                        <p class="description-text">
+                            Variedade de produtos e serviços financeiros,
+                            poupança integrada, facilidade de acessar sua
+                            conta onde e quando quiser... Aqui tem tudo o
+                            que você precisa!
+                        </p>
+                        <ul class="feature-list">
+                            <li>Abra sua conta-corrente pelo app. É rápido!</li>
+                            <li>Garanta 50% de desconto no teatro</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: Mais Benefícios (Grid) -->
+        <section class="more-benefits-section" id="beneficios-leobank-anchor">
+            <div class="container">
+                <h2 class="section-title-center">Confira mais benefícios que você pode ter com a gente</h2>
+
+                <div class="benefits-grid">
+                    <!-- Card 1: Limite de Crédito -->
+                    <div class="benefit-card card-large-horizontal"
+                        style="background-image: url('assets/img/benefit-credit-limit.png');">
+                        <div class="benefit-content">
+                            <h3>Limite de Crédito Pessoal</h3>
+                            <p>Tenha dinheiro rápido com parcelas que cabem no bolso.¹</p>
+                            <div class="benefit-dash"></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Invest Fácil -->
+                    <div class="benefit-card card-small"
+                        style="background-image: url('assets/img/benefit-invest.png');">
+                        <div class="benefit-content">
+                            <h3>Invest Fácil</h3>
+                            <p>Aqui seu dinheiro não fica parado e rende todos os dias.²</p>
+                            <div class="benefit-dash"></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Saque FGTS (Vertical) -->
+                    <div class="benefit-card card-large-vertical"
+                        style="background-image: url('assets/img/benefit-fgts.png');">
+                        <div class="benefit-content">
+                            <h3>Antecipação Saque-Aniversário FGTS</h3>
+                            <p>Dinheiro extra sem comprometer sua renda mensal.</p>
+                            <div class="benefit-dash"></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Cheque Especial -->
+                    <div class="benefit-card card-small"
+                        style="background-image: url('assets/img/benefit-overdraft.png');">
+                        <div class="benefit-content">
+                            <h3>Cheque Especial</h3>
+                            <p>Resolva imprevistos do dia a dia com o limite emergencial disponível na sua conta.¹</p>
+                            <div class="benefit-dash"></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Portabilidade -->
+                    <div class="benefit-card card-small"
+                        style="background-image: url('assets/img/benefit-portability.png');">
+                        <div class="benefit-content">
+                            <h3>Portabilidade</h3>
+                            <p>Traga seu salário e aproveite as facilidades de ser um cliente Leobank.</p>
+                            <div class="benefit-dash"></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Tag Leobank -->
+                    <div class="benefit-card card-small" style="background-image: url('assets/img/benefit-veloe.png');">
+                        <div class="benefit-content">
+                            <h3>Tag Leobank</h3>
+                            <p>Evite filas em pedágios e estacionamentos com a tag exclusiva do Leobank.</p>
+                            <div class="benefit-dash"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="leobank-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <a href="#" class="footer-logo">
+                        <img src="assets/img/logo-leobank.png" alt="Leobank" class="logo-img">
+                    </a>
+                    <p class="brand-tagline">Excelência e solidez para o seu patrimônio.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="ph ph-x-logo"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Para Você</h4>
+                    <ul>
+                        <li><a href="abra-sua-conta.html">Conta Digital</a></li>
+                        <li><a href="cartoes.html">Cartão de Crédito</a></li>
+                        <li><a href="investimentos-leobank.html">Investimentos</a></li>
+                        <li><a href="seguros.html">Seguros</a></li>
+                        <li><a href="#">Empréstimos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Para Empresas</h4>
+                    <ul>
+                        <li><a href="empresas.html">Conta PJ</a></li>
+                        <li><a href="empresas.html#credito">Capital de Giro</a></li>
+                        <li><a href="empresas.html#servicos">Folha de Pagamento</a></li>
+                        <li><a href="empresas.html#servicos">Cartão Corporativo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Sobre o Leobank</a></li>
+                        <li><a href="#">Carreiras</a></li>
+                        <li><a href="#">Relatórios</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <div class="security-area">
+                    <span class="security-label">Segurança e Certificações</span>
+                    <div class="security-badges">
+                        <div class="badge-item">
+                            <i class="ph ph-shield-check"></i>
+                            <span>PCI DSS<br><small>Certified</small></span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="ph ph-lock-key"></i>
+                            <span>Dados<br><small>Criptografados</small></span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="ph ph-bank"></i>
+                            <span>Autorizado<br><small>Banco Central</small></span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="ph ph-check-circle"></i>
+                            <span>Site<br><small>Verificado</small></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>Leobank Pagamentos S.A. | CNPJ: 00.000.000/0001-00</p>
+                    <p>Av. Brigadeiro Faria Lima, 0000 - São Paulo, SP - CEP 00000-000</p>
+                    <p class="copyright">&copy; 2025 Leobank. Todos os direitos reservados.</p>
+                </div>
+                <div class="app-downloads">
+                    <a href="#" class="app-btn"><i class="ph-fill ph-apple-logo"></i> App Store</a>
+                    <a href="#" class="app-btn"><i class="ph-fill ph-google-play-logo"></i> Google Play</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Reusing existing script for header interactions -->
+    <script>
+        // Custom Select for Account Type
+        const customSelectHero = document.getElementById('custom-select-hero');
+        const selectTriggerHero = customSelectHero?.querySelector('.select-trigger-hero');
+        const optionsContainerHero = customSelectHero?.querySelector('.options-container-hero');
+        const optionsHero = customSelectHero?.querySelectorAll('.option-hero');
+        const selectValueHero = document.getElementById('custom-select-value-hero');
+        const nativeSelectHero = document.getElementById('account-type-select-native');
+
+        const documentInput = document.getElementById('document-input');
+        const docIcon = document.getElementById('doc-icon');
+
+        // Toggle dropdown
+        if (selectTriggerHero) {
+            selectTriggerHero.addEventListener('click', function (e) {
+                e.stopPropagation();
+                customSelectHero.classList.toggle('open');
+            });
+        }
+
+        // Select option
+        if (optionsHero) {
+            optionsHero.forEach(option => {
+                option.addEventListener('click', function (e) {
+                    e.stopPropagation();
+
+                    // Update selected state
+                    optionsHero.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+
+                    // Update display value
+                    const value = this.getAttribute('data-value');
+                    selectValueHero.textContent = this.textContent;
+
+                    // Update hidden native select
+                    nativeSelectHero.value = value;
+
+                    // Toggle document input placeholder and icon
+                    if (value === 'pj') {
+                        documentInput.placeholder = 'Digite seu CNPJ';
+                        documentInput.maxLength = 18;
+                        docIcon.className = 'ph ph-buildings input-icon';
+                    } else {
+                        documentInput.placeholder = 'Digite seu CPF';
+                        documentInput.maxLength = 14;
+                        docIcon.className = 'ph ph-identification-card input-icon';
+                    }
+                    documentInput.value = '';
+
+                    // Close dropdown
+                    customSelectHero.classList.remove('open');
+                });
+            });
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function () {
+            if (customSelectHero) {
+                customSelectHero.classList.remove('open');
+            }
+        });
+
+        // Masks
+        function maskCPF(value) {
+            return value
+                .replace(/\D/g, '')
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d{1,2})/, '$1-$2')
+                .replace(/(-\d{2})\d+?$/, '$1');
+        }
+
+        function maskCNPJ(value) {
+            return value
+                .replace(/\D/g, '')
+                .replace(/(\d{2})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d)/, '$1/$2')
+                .replace(/(\d{4})(\d)/, '$1-$2')
+                .replace(/(-\d{2})\d+?$/, '$1');
+        }
+
+        if (documentInput) {
+            documentInput.addEventListener('input', function (e) {
+                const type = nativeSelectHero.value;
+                if (type === 'pj') {
+                    e.target.value = maskCNPJ(e.target.value);
+                } else {
+                    e.target.value = maskCPF(e.target.value);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

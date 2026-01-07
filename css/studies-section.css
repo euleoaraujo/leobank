@@ -1,0 +1,136 @@
+/* ========================================
+   STUDIES SECTION - Leobank
+   ======================================== */
+
+.studies-section {
+    background-color: #000000;
+    padding: 80px 0;
+    width: 100%;
+}
+
+/* Header */
+.studies-header {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.studies-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.studies-subtitle {
+    font-size: 1.125rem;
+    color: #CCCCCC;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Grid Layout */
+.studies-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* Study Cards */
+.study-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+}
+
+.study-card:hover {
+    border-color: #FFD100;
+    box-shadow: 0 4px 20px rgba(255, 209, 0, 0.25);
+    transform: translateY(-4px);
+    background-color: #222222;
+}
+
+/* Icon */
+.study-icon {
+    width: 56px;
+    height: 56px;
+    background-color: #FFD100;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.study-icon i {
+    font-size: 28px;
+    color: #000000;
+}
+
+/* Card Title */
+.study-card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.4;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Study Link */
+.study-link {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #FFD100;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.study-link:hover {
+    color: #FFF066;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .studies-section {
+        padding: 60px 0;
+    }
+
+    .studies-header {
+        margin-bottom: 40px;
+    }
+
+    .studies-title {
+        font-size: 2rem;
+    }
+
+    .studies-subtitle {
+        font-size: 1rem;
+    }
+
+    .studies-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .study-card {
+        padding: 28px 20px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .studies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

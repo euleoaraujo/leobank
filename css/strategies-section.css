@@ -1,0 +1,384 @@
+/* ==========================================================================
+   ENHANCED STRATEGIES SECTION - Minimalist Design with JS Effects
+   ========================================================================== */
+
+/* Section Container */
+.strategies-section {
+    position: relative;
+    padding: 120px 0;
+    background: #000;
+    overflow: hidden;
+}
+
+.strategies-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-header .hud-label {
+    display: inline-block;
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #888;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Strategies Grid */
+.strategies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+}
+
+/* Strategy Card - Minimalist & Modern */
+.strategy-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 50px 40px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
+
+.strategy-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.strategy-card:hover::before {
+    opacity: 0.8;
+}
+
+.strategy-card:hover {
+    border-color: rgba(255, 221, 53, 0.3);
+    background: linear-gradient(135deg, rgba(255, 221, 53, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    box-shadow: 0 30px 60px rgba(255, 221, 53, 0.15);
+}
+
+/* Card Glare Effect (for 3D tilt) */
+.card-glare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 24px;
+    z-index: 1;
+}
+
+/* Card Number (Large, background) */
+.card-number {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 8rem;
+    font-weight: 700;
+    color: rgba(255, 221, 53, 0.05);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    transition: color 0.4s ease;
+}
+
+.strategy-card:hover .card-number {
+    color: rgba(255, 221, 53, 0.1);
+}
+
+/* Icon Container */
+.card-icon-container {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 221, 53, 0.1);
+    border: 2px solid rgba(255, 221, 53, 0.3);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card-icon-container i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.strategy-card:hover .card-icon-container {
+    background: rgba(255, 221, 53, 0.15);
+    border-color: var(--accent-color);
+    transform: translateY(-5px) scale(1.05);
+}
+
+.strategy-card:hover .card-icon-container i {
+    transform: scale(1.1);
+}
+
+/* Card Title */
+.card-title {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+}
+
+/* Card Description */
+.card-description {
+    font-size: 1rem;
+    color: #aaa;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* Card Metric (Animated Numbers) */
+.card-metric {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.metric-value {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1;
+    font-feature-settings: 'tnum';
+    font-variant-numeric: tabular-nums;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+
+/* Card Footer */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(255, 221, 53, 0.1);
+    border: 1px solid rgba(255, 221, 53, 0.2);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+}
+
+/* Particle Canvas Background */
+.particles-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+/* Scroll Reveal Animation States */
+.strategy-card {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.strategy-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .strategies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .strategy-card:nth-child(3) {
+        grid-column: 1 / -1;
+        max-width: 600px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .strategies-section {
+        padding: 80px 0;
+    }
+
+    .strategies-container {
+        padding: 0 20px;
+    }
+
+    .section-header {
+        margin-bottom: 50px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .strategies-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .strategy-card {
+        padding: 40px 30px;
+    }
+
+    .strategy-card:nth-child(3) {
+        grid-column: auto;
+        max-width: 100%;
+    }
+
+    .card-number {
+        font-size: 6rem;
+        top: 15px;
+        right: 20px;
+    }
+
+    .card-icon-container {
+        width: 70px;
+        height: 70px;
+    }
+
+    .card-icon-container i {
+        font-size: 2.5rem;
+    }
+
+    .card-title {
+        font-size: 1.6rem;
+    }
+
+    .card-description {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+    }
+
+    .metric-value {
+        font-size: 3rem;
+    }
+
+    .metric-label {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .strategies-section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .strategy-card {
+        padding: 30px 25px;
+    }
+
+    .card-number {
+        font-size: 5rem;
+    }
+
+    .card-icon-container {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+    }
+
+    .card-icon-container i {
+        font-size: 2rem;
+    }
+
+    .card-title {
+        font-size: 1.4rem;
+    }
+
+    .metric-value {
+        font-size: 2.5rem;
+    }
+}
+
+/* Performance Optimizations */
+.strategy-card {
+    will-change: transform, box-shadow;
+}
+
+.card-icon-container {
+    will-change: transform;
+}
+
+/* Smooth transitions for all interactive elements */
+.strategy-card,
+.card-icon-container,
+.card-icon-container i,
+.card-number,
+.card-tag {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

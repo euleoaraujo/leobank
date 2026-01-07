@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leobank Seguros | Proteção Completa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="sticky-header-wrapper">
+        <header class="auribank-header">
+            <div class="container">
+                <div class="logo-column">
+                    <a href="index.html" class="logo">
+                        <img src="assets/img/logo-leobank.png" alt="Leobank" class="logo-img">
+                    </a>
+                </div>
+                <div class="header-actions">
+                    <div class="login-wrapper">
+                        <div class="login-label-column">
+                            <span>Acesse sua conta</span>
+                        </div>
+                        <div class="input-column type-column">
+                            <select id="select-tipo-conta" class="mobile-only-select" aria-label="Tipo de Conta">
+                                <option value="pf">Pessoa Física</option>
+                                <option value="pj">Pessoa Jurídica</option>
+                            </select>
+                            <div class="custom-select" id="custom-select-desktop">
+                                <div class="select-trigger">
+                                    <span id="custom-select-value">Pessoa Física</span>
+                                    <i class="ph ph-caret-down"></i>
+                                </div>
+                                <div class="options-container">
+                                    <div class="option selected" data-value="pf">Pessoa Física</div>
+                                    <div class="option" data-value="pj">Pessoa Jurídica</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="pj-inputs" class="inputs-group" style="display: none;">
+                            <span class="input-separator">|</span>
+                            <div class="input-column agency-column">
+                                <input type="text" id="agencia" placeholder="Agência" aria-label="Agência"
+                                    maxlength="4">
+                            </div>
+                            <span class="input-separator">|</span>
+                            <div class="input-column account-column">
+                                <input type="text" id="conta" placeholder="Conta" aria-label="Conta" maxlength="12">
+                            </div>
+                        </div>
+
+                        <div id="pf-inputs" class="inputs-group" style="display: flex;">
+                            <span class="input-separator">|</span>
+                            <div class="input-column cpf-column">
+                                <input type="text" id="cpf" placeholder="Insira seu CPF" aria-label="CPF"
+                                    maxlength="14">
+                            </div>
+                        </div>
+
+                        <button class="btn-enter" aria-label="Entrar">
+                            <span>Entrar</span>
+                            <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+
+                <div class="cta-column">
+                    <a href="index.html" class="btn-back-home">
+                        <span>Voltar para o início</span> <i class="ph ph-house"></i>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <div class="hamburger-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </header>
+
+        <!-- Internal Sub Header for Easy Navigation -->
+        <nav class="sub-header sticky-sub-nav">
+            <div class="container sub-header-container-mobile">
+                <ul class="sub-header-menu">
+                    <li><a href="#vida" class="active">Vida</a></li>
+                    <li><a href="#auto">Auto</a></li>
+                    <li><a href="#celular">Celular</a></li>
+                    <li><a href="#residencial">Residencial</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Insurance Hero -->
+        <section class="insurance-hero">
+            <div class="container">
+                <div class="hero-content-center">
+                    <span class="hero-tag">SEGURANÇA TOTAL</span>
+                    <h1>Proteção sob medida para <br> o que você mais ama.</h1>
+                    <p>Contrate em minutos, sem burocracia e com a confiança Leobank. Coberturas que cabem no seu bolso
+                        e resolvem sua vida.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Vida -->
+        <section id="vida" class="product-detail-section">
+            <div class="container">
+                <div class="product-grid">
+                    <div class="product-info">
+                        <div class="product-header-row">
+                            <div class="product-icon-large"><i class="ph ph-heartbeat"></i></div>
+                            <h2>Seguro Vida</h2>
+                        </div>
+                        <p class="product-highlight">Cuide de quem importa, hoje e sempre.</p>
+                        <p class="product-description">O Seguro Vida Leobank garante apoio financeiro para sua família
+                            em momentos difíceis. Além disso, você conta com Telemedicina do Einstein 24h para usar
+                            quando precisar.</p>
+
+                        <ul class="benefit-list">
+                            <li><i class="ph ph-lightning"></i> Sem carência para morte acidental</li>
+                            <li><i class="ph ph-hospital"></i> Cobertura para internação hospitalar</li>
+                            <li><i class="ph ph-video-camera"></i> Telemedicina Albert Einstein inclusa</li>
+                            <li><i class="ph ph-money"></i> Sorteios mensais de R$ 10 mil</li>
+                        </ul>
+
+                        <button class="btn-primary-large" onclick="openSimulation('Seguro Vida')">Seguro vida <i
+                                class="ph ph-arrow-right"></i></button>
+                    </div>
+                    <div class="product-visual">
+                        <div class="life-mockup life-shield-card">
+                            <div class="shield-header">
+                                <span class="brand-tag">LEOBANK LIFE</span>
+                            </div>
+                            <div class="shield-icon-container">
+                                <!-- Animated Shield/Heart SVG -->
+                                <svg class="shield-svg" viewBox="0 0 100 120" width="120" height="144">
+                                    <defs>
+                                        <filter id="glow">
+                                            <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
+                                            <feMerge>
+                                                <feMergeNode in="coloredBlur" />
+                                                <feMergeNode in="SourceGraphic" />
+                                            </feMerge>
+                                        </filter>
+                                    </defs>
+                                    <path class="shield-path"
+                                        d="M50,115 C20,100 5,75 5,30 L50,5 L95,30 C95,75 80,100 50,115 Z" fill="none"
+                                        stroke="var(--accent-color)" stroke-width="2" />
+                                    <path class="heart-pulse-path"
+                                        d="M50,45 C40,45 35,50 35,60 C35,75 50,85 50,85 C50,85 65,75 65,60 C65,50 60,45 50,45"
+                                        fill="none" stroke="var(--accent-color)" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path class="ekg-path" d="M25,60 L35,60 L40,50 L45,70 L50,60 L55,60" fill="none"
+                                        stroke="var(--accent-color)" stroke-width="1.5" opacity="0.7" />
+                                </svg>
+                                <div class="pulse-ring"></div>
+                            </div>
+                            <div class="shield-footer">
+                                <small>A partir de</small>
+                                <strong class="price-display">R$ 9,00</strong>
+                                <span class="period">/mês</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Auto -->
+        <section id="auto" class="product-detail-section alt-bg">
+            <div class="container">
+                <div class="product-grid reverse">
+                    <div class="product-visual">
+                        <div class="visual-card-mockup auto-mockup">
+                            <div class="mockup-icon"><i class="ph ph-car"></i></div>
+                            <div class="mockup-badge">Mais Contratado</div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-kicker">SEU VEÍCULO</span>
+                        <div class="product-header-row">
+                            <i class="ph ph-car product-icon-large"></i>
+                            <h2>Seguro Auto</h2>
+                        </div>
+                        <p class="product-highlight">Seu carro protegido, sua rotina tranquila.</p>
+                        <p class="product-description">Esqueça a papelada. Vistoria 100% digital pelo app e pagamento
+                            mensal no cartão de crédito sem comprometer seu limite.</p>
+
+                        <ul class="benefit-list">
+                            <li><i class="ph ph-check-circle-fill"></i> Guincho ilimitado 24h</li>
+                            <li><i class="ph ph-check-circle-fill"></i> Carro reserva por até 7 dias</li>
+                            <li><i class="ph ph-check-circle-fill"></i> Reparo de vidros, faróis e lanternas</li>
+                            <li><i class="ph ph-check-circle-fill"></i> Cobertura para terceiros (RCF)</li>
+                        </ul>
+
+                        <button class="btn-primary-large" onclick="openSimulation('Seguro Auto')">Simular Seguro
+                            Auto</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Celular -->
+        <section id="celular" class="product-detail-section">
+            <div class="container">
+                <div class="product-grid">
+                    <div class="product-info">
+                        <span class="product-kicker">CONECTADO SEMPRE</span>
+                        <div class="product-header-row">
+                            <i class="ph ph-device-mobile product-icon-large"></i>
+                            <h2>Seguro Celular</h2>
+                        </div>
+                        <p class="product-highlight">Contra roubo, furto e quebra acidental.</p>
+                        <p class="product-description">Proteção completa contra roubo, furto qualificado e também danos
+                            acidentais como quebra de tela ou queda em líquidos.</p>
+
+                        <ul class="benefit-list">
+                            <li><i class="ph ph-check-circle-fill"></i> Cobertura internacional</li>
+                            <li><i class="ph ph-check-circle-fill"></i> Pagamento rápido via Pix</li>
+                            <li><i class="ph ph-check-circle-fill"></i> Sem carência para Roubo e Furto</li>
+                            <li><i class="ph ph-check-circle-fill"></i> Cobre celulares novos e usados</li>
+                        </ul>
+
+                        <button class="btn-primary-large" onclick="openSimulation('Seguro Celular')">Simular Seguro
+                            Celular</button>
+                    </div>
+                    <div class="product-visual">
+                        <div class="visual-card-mockup phone-mockup">
+                            <i class="ph ph-shield-check"></i>
+                            <span>Proteção Total</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Residencial -->
+        <section id="residencial" class="product-detail-section alt-bg">
+            <div class="container">
+                <div class="product-grid reverse">
+                    <div class="product-visual">
+                        <div class="visual-card-mockup home-mockup">
+                            <i class="ph ph-house-line"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-kicker">LAR DOCE LAR</span>
+                        <div class="product-header-row">
+                            <i class="ph ph-house product-icon-large"></i>
+                            <h2>Seguro Residencial</h2>
+                        </div>
+                        <p class="product-highlight">Sua casa segura, sua família em paz.</p>
+                        <p class="product-description">Muito mais que proteção contra incêndio e roubo. Uma rede de
+                            assistência completa para os perrengues do dia a dia.</p>
+
+                        <ul class="benefit-list">
+                            <li><i class="ph ph-check-circle-fill"></i> Encanador, Eletricista e Chaveiro 24h</li>
+                            <li><i class="ph ph-check-circle-fill"></i> Reparo de eletrodomésticos (linha branca)</li>
+                            <li><i class="ph ph-check-circle-fill"></i> Responsabilidade Civil Familiar</li>
+                            <li><i class="ph ph-check-circle-fill"></i> Pagamento de aluguel em caso de sinistro</li>
+                        </ul>
+
+                        <button class="btn-primary-large" onclick="openSimulation('Seguro Residencial')">Simular Seguro
+                            Residencial</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ready to protect -->
+        <section class="ready-to-start">
+            <div class="container">
+                <h2>Pronto para proteger o que é seu?</h2>
+                <p class="cta-slogan">Então tá na hora de ser Leobank</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Simulation Modal -->
+    <div id="simulationModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i class="ph ph-x"></i></button>
+            <div class="modal-header">
+                <h3>Simulação Rápida</h3>
+                <p>Receba uma cotação personalizada em segundos.</p>
+            </div>
+            <form class="simulation-form" onsubmit="submitSimulation(event)">
+                <div class="form-group">
+                    <label>Tipo de Seguro</label>
+                    <select id="modalCheckType" class="form-control">
+                        <option value="Seguro Vida">Seguro Vida</option>
+                        <option value="Seguro Auto">Seguro Auto</option>
+                        <option value="Seguro Celular">Seguro Celular</option>
+                        <option value="Seguro Residencial">Seguro Residencial</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Nome Completo</label>
+                    <input type="text" class="form-control" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label>CPF</label>
+                    <input type="text" class="form-control" placeholder="000.000.000-00" required>
+                </div>
+                <button type="submit" class="btn-primary-full">Ver Cotação</button>
+            </form>
+        </div>
+    </div>
+
+
+    <footer class="leobank-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/img/logo-leobank.png" alt="Leobank" class="logo-img">
+                    </a>
+                    <p class="brand-tagline">Excelência e solidez para o seu patrimônio.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="ph ph-x-logo"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Para Você</h4>
+                    <ul>
+                        <li><a href="abra-sua-conta.html">Conta Digital</a></li>
+                        <li><a href="cartoes.html">Cartão de Crédito</a></li>
+                        <li><a href="investimentos-leobank.html">Investimentos</a></li>
+                        <li><a href="seguros.html">Seguros</a></li>
+                        <li><a href="#">Empréstimos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Para Empresas</h4>
+                    <ul>
+                        <li><a href="empresas.html">Conta PJ</a></li>
+                        <li><a href="empresas.html#credito">Capital de Giro</a></li>
+                        <li><a href="empresas.html#servicos">Folha de Pagamento</a></li>
+                        <li><a href="empresas.html#servicos">Cartão Corporativo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Sobre o Leobank</a></li>
+                        <li><a href="#">Carreiras</a></li>
+                        <li><a href="#">Relatórios</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <div class="security-area">
+                    <span class="security-label">Segurança e Certificações</span>
+                    <div class="security-badges">
+                        <div class="badge-item">
+                            <i class="ph ph-shield-check"></i>
+                            <span>PCI DSS<br><small>Certified</small></span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="ph ph-lock-key"></i>
+                            <span>Dados<br><small>Criptografados</small></span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="ph ph-bank"></i>
+                            <span>Autorizado<br><small>Banco Central</small></span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="ph ph-check-circle"></i>
+                            <span>Site<br><small>Verificado</small></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>Leobank Pagamentos S.A. | CNPJ: 00.000.000/0001-00</p>
+                    <p>Av. Brigadeiro Faria Lima, 0000 - São Paulo, SP - CEP 00000-000</p>
+                    <p class="copyright">&copy; 2025 Leobank. Todos os direitos reservados.</p>
+                </div>
+                <div class="app-downloads">
+                    <a href="#" class="app-btn"><i class="ph-fill ph-apple-logo"></i> App Store</a>
+                    <a href="#" class="app-btn"><i class="ph-fill ph-google-play-logo"></i> Google Play</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Internal page logic
+        function openSimulation(product) {
+            const modal = document.getElementById('simulationModal');
+            const select = document.getElementById('modalCheckType');
+            select.value = product;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('simulationModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function submitSimulation(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'Enviando...';
+            setTimeout(() => {
+                alert('Solicitação de simulação enviada com sucesso! Em breve entraremos em contato.');
+                closeModal();
+                btn.innerText = originalText;
+                e.target.reset();
+            }, 1000);
+        }
+
+        // Close modal on outside click
+        document.getElementById('simulationModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

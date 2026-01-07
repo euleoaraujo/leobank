@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leobank Investimentos | Simples e Rentável</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="sticky-header-wrapper">
+        <header class="auribank-header">
+            <div class="container">
+                <div class="logo-column">
+                    <a href="index.html" class="logo">
+                        <img src="assets/img/logo-leobank.png" alt="Leobank" class="logo-img">
+                    </a>
+                </div>
+                <div class="header-actions">
+                    <div class="login-wrapper">
+                        <div class="login-label-column">
+                            <span>Acesse sua conta</span>
+                        </div>
+                        <div class="input-column type-column">
+                            <select id="select-tipo-conta" class="mobile-only-select" aria-label="Tipo de Conta">
+                                <option value="pf">Pessoa Física</option>
+                                <option value="pj">Pessoa Jurídica</option>
+                            </select>
+                            <div class="custom-select" id="custom-select-desktop">
+                                <div class="select-trigger">
+                                    <span id="custom-select-value">Pessoa Física</span>
+                                    <i class="ph ph-caret-down"></i>
+                                </div>
+                                <div class="options-container">
+                                    <div class="option selected" data-value="pf">Pessoa Física</div>
+                                    <div class="option" data-value="pj">Pessoa Jurídica</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="pj-inputs" class="inputs-group" style="display: none;">
+                            <span class="input-separator">|</span>
+                            <div class="input-column agency-column">
+                                <input type="text" id="agencia" placeholder="Agência" aria-label="Agência"
+                                    maxlength="4">
+                            </div>
+                            <span class="input-separator">|</span>
+                            <div class="input-column account-column">
+                                <input type="text" id="conta" placeholder="Conta" aria-label="Conta" maxlength="12">
+                            </div>
+                        </div>
+
+                        <div id="pf-inputs" class="inputs-group" style="display: flex;">
+                            <span class="input-separator">|</span>
+                            <div class="input-column cpf-column">
+                                <input type="text" id="cpf-login" placeholder="Insira seu CPF" aria-label="CPF"
+                                    maxlength="14">
+                            </div>
+                        </div>
+
+                        <button class="btn-enter" aria-label="Entrar">
+                            <span>Entrar</span>
+                            <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cta-column">
+                    <a href="index.html" class="btn-back-home">
+                        <span>Voltar para o início</span> <i class="ph ph-house"></i>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <div class="hamburger-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </header>
+
+        <!-- Sub Header (Optional, kept consistent with Seguros but adjusted inputs) -->
+        <nav class="sub-header sticky-sub-nav">
+            <div class="container sub-header-container-mobile">
+                <ul class="sub-header-menu">
+                    <li><a href="#hero" class="active">Início</a></li>
+                    <li><a href="#vantagens">Vantagens</a></li>
+                    <li><a href="#app">App</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Section: Invest LP Hero -->
+        <section class="invest-lp-hero" id="hero">
+            <div class="container hero-invest-container">
+                <div class="hero-invest-content">
+                    <h2 class="lp-brand">Leobank</h2>
+                    <h1 class="lp-title">Investimentos</h1>
+                    <p class="lp-subtitle">Investimentos simples para qualquer perfil de investidor.</p>
+
+                    <div class="hero-lead-card">
+                        <h3 class="lead-card-title">Abra sua Conta e comece a investir</h3>
+                        <div class="lead-input-group">
+                            <input type="text" placeholder="Digite seu CPF" class="lead-input">
+                        </div>
+                        <button class="btn-lead-submit">
+                            Continuar <i class="ph ph-caret-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-invest-image">
+                    <img src="assets/img/invest-hero-person.png" alt="Investidora Leobank">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Advantages -->
+        <section class="invest-lp-advantages" id="vantagens">
+            <div class="container">
+                <h2 class="lp-section-title">Vantagens de investir com o jeito Leo</h2>
+                <div class="advantages-grid">
+                    <div class="adv-card">
+                        <div class="adv-icon">
+                            <i class="ph ph-chart-bar"></i>
+                        </div>
+                        <h3>Curadoria de investimentos</h3>
+                        <p>Nossos investimentos são selecionados por especialistas para sempre oferecer a você as opções
+                            mais vantajosas.</p>
+                    </div>
+                    <div class="adv-card">
+                        <div class="adv-icon">
+                            <i class="bi bi-grid-fill"></i>
+                        </div>
+                        <h3>Portfólio completo de investimentos</h3>
+                        <p>Um cardápio de investimentos para todos os perfis e bolsos, de renda fixa a fundos e ações.
+                        </p>
+                    </div>
+                    <div class="adv-card">
+                        <div class="adv-icon">
+                            <i class="ph ph-trend-up"></i>
+                        </div>
+                        <h3>Monitore seu rendimento</h3>
+                        <p>Você acompanha todos os seus investimentos direto pelo app do Leobank de um jeito simples e
+                            intuitivo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: App -->
+        <section class="invest-lp-app" id="app">
+            <div class="container app-invest-container">
+                <div class="app-invest-content">
+                    <h2>Invista direto pelo app</h2>
+                    <p>Você acompanha todos os seus ativos em um só lugar com uma experiência intuitiva de monitoramento
+                        e análise.</p>
+
+                    <p class="app-subtext">Baixe o app do Leobank</p>
+
+                    <div class="app-buttons">
+                        <a href="#" class="store-btn apple">
+                            <i class="bi bi-apple"></i>
+                            <div class="store-text">
+                                <span>Baixar na</span>
+                                <span>App Store</span>
+                            </div>
+                        </a>
+                        <a href="#" class="store-btn google">
+                            <i class="bi bi-google-play"></i>
+                            <div class="store-text">
+                                <span>DISPONÍVEL NO</span>
+                                <span>Google Play</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="app-invest-image">
+                    <!-- Placeholder or generated image -->
+                    <img src="assets/img/invest-app-hand.png" alt="App Investimentos Leobank">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="leobank-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/img/logo-leobank.png" alt="Leobank" class="logo-img">
+                    </a>
+                    <p class="brand-tagline">Excelência e solidez para o seu patrimônio.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="ph ph-x-logo"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Para Você</h4>
+                    <ul>
+                        <li><a href="abra-sua-conta.html">Conta Digital</a></li>
+                        <li><a href="cartoes.html">Cartão de Crédito</a></li>
+                        <li><a href="investimentos-leobank.html">Investimentos</a></li>
+                        <li><a href="seguros.html">Seguros</a></li>
+                        <li><a href="#">Empréstimos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Para Empresas</h4>
+                    <ul>
+                        <li><a href="empresas.html">Conta PJ</a></li>
+                        <li><a href="empresas.html#credito">Capital de Giro</a></li>
+                        <li><a href="empresas.html#servicos">Folha de Pagamento</a></li>
+                        <li><a href="empresas.html#servicos">Cartão Corporativo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Sobre o Leobank</a></li>
+                        <li><a href="#">Carreiras</a></li>
+                        <li><a href="#">Relatórios</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <div class="security-area">
+                    <span class="security-label">Segurança e Certificações</span>
+                    <div class="security-badges">
+                        <div class="badge-item">
+                            <i class="ph ph-shield-check"></i>
+                            <span>PCI DSS<br><small>Certified</small></span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="ph ph-lock-key"></i>
+                            <span>Dados<br><small>Criptografados</small></span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="ph ph-bank"></i>
+                            <span>Autorizado<br><small>Banco Central</small></span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="ph ph-check-circle"></i>
+                            <span>Site<br><small>Verificado</small></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>Leobank Pagamentos S.A. | CNPJ: 00.000.000/0001-00</p>
+                    <p>Av. Brigadeiro Faria Lima, 0000 - São Paulo, SP - CEP 00000-000</p>
+                    <p class="copyright">&copy; 2025 Leobank. Todos os direitos reservados.</p>
+                </div>
+                <div class="app-downloads">
+                    <a href="#" class="app-btn"><i class="ph-fill ph-apple-logo"></i> App Store</a>
+                    <a href="#" class="app-btn"><i class="ph-fill ph-google-play-logo"></i> Google Play</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

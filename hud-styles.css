@@ -1,0 +1,320 @@
+/* ==========================================================================
+   EDUCATION FINANCE HUD PAGE STYLES
+   Interface style for financial education portfolio page
+   ========================================================================== */
+
+/* Base Page Styling for Financial Education HUD */
+.fin-portfolio-page {
+    background-color: #000;
+    color: #fff;
+    font-family: var(--header-font);
+    overflow-x: hidden;
+}
+
+/* Main HUD Container */
+.hud-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+/* HUD Hero Section */
+.hud-hero {
+    padding: 60px 0 100px;
+    text-align: left;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-main-data {
+    max-width: 700px;
+}
+
+.hud-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    border: 0.5px solid var(--accent-color);
+    padding: 6px 14px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.hud-hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.highlight-yellow {
+    color: var(--accent-color);
+}
+
+.hud-hero p {
+    font-size: 1.1rem;
+    color: #888;
+    line-height: 1.6;
+}
+
+/* Data Grid (Main 4 Pillars) */
+.hud-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.data-frame {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.001) 100%);
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 30px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.data-frame:hover {
+    border-color: var(--accent-color);
+    background: linear-gradient(135deg, rgba(255, 221, 53, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    transform: translateY(-5px);
+}
+
+/* UI Corners (Cyber aesthetic) */
+.ui-corner {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgba(255, 221, 53, 0.4);
+}
+
+.ui-tl {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.ui-br {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Scanline FX */
+.scanline {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    animation: scan 4s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes scan {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.hud-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.hud-desc {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.hud-visual-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hud-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.data-frame:hover .hud-img {
+    opacity: 1;
+}
+
+/* HUD Section for Cards */
+.hud-section {
+    margin: 80px 0;
+    text-align: center;
+}
+
+/* Enhanced Card Grid - WIDER and MORE PROPORTIONAL */
+.hud-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+    max-width: 100%;
+    /* Remove max-width constraint para usar toda a largura disponível */
+}
+
+/* Individual HUD Cards - LARGER AND MORE SPACIOUS */
+.hud-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 50px 40px;
+    /* Increased padding for more spacious feel */
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.hud-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.hud-card:hover::before {
+    opacity: 1;
+}
+
+.hud-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-8px) scale(1.02);
+    background: linear-gradient(135deg, rgba(255, 221, 53, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    box-shadow: 0 20px 40px rgba(255, 221, 53, 0.15);
+}
+
+.hud-card i {
+    font-size: 4rem;
+    /* Much larger icons for better visibility */
+    color: var(--accent-color);
+    margin-bottom: 30px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.hud-card:hover i {
+    transform: scale(1.15) rotateY(360deg);
+    color: var(--accent-color);
+}
+
+.hud-card h3 {
+    font-size: 1.6rem;
+    /* Larger titles */
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 0.02em;
+}
+
+.hud-card p {
+    font-size: 1.05rem;
+    /* Slightly larger description text */
+    color: #bbb;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* CTA Section */
+.hud-cta {
+    text-align: center;
+    margin: 100px 0 60px;
+    padding: 60px 0;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-interface {
+    display: inline-block;
+    padding: 16px 40px;
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-interface:hover {
+    background-color: var(--accent-color);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 221, 53, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .hud-card-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .hud-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .hud-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hud-card {
+        padding: 40px 30px;
+    }
+
+    .hud-card i {
+        font-size: 3.5rem;
+    }
+
+    .hud-card h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hud-container {
+        padding: 30px 15px;
+    }
+
+    .hud-hero {
+        padding: 40px 0 60px;
+    }
+
+    .hud-hero h1 {
+        font-size: 2rem;
+    }
+
+    .hud-card i {
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,370 @@
+/* ==========================================================================
+   LEOBANK EMPRESAS - APP FEATURES SECTION
+   Adapted business content with Pantone colors
+   ========================================================================== */
+
+/* App Features Section */
+.app-features-section {
+    background-color: #f5f5f5;
+    padding: 80px 0;
+}
+
+.features-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px;
+}
+
+.features-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #000;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+}
+
+.features-subtitle {
+    font-size: 1.125rem;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Feature Showcase */
+.feature-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    background: #fff;
+    border-radius: 16px;
+    padding: 60px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.feature-mockup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-mockup img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.feature-title {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #000;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.feature-description {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.link-feature {
+    color: #FFDD35;
+    font-family: var(--font-stack);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.link-feature i {
+    font-size: 1.125rem;
+    transition: transform 0.3s ease;
+}
+
+.link-feature:hover {
+    color: #E6C730;
+}
+
+.link-feature:hover i {
+    transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .features-title {
+        font-size: 2rem;
+    }
+
+    .feature-showcase {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px;
+    }
+
+    .feature-mockup {
+        order: 2;
+    }
+
+    .feature-content {
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .app-features-section {
+        padding: 60px 0;
+    }
+
+    .features-header {
+        margin-bottom: 40px;
+    }
+
+    .features-title {
+        font-size: 1.75rem;
+    }
+
+    .features-subtitle {
+        font-size: 1rem;
+    }
+
+    .feature-showcase {
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .feature-title {
+        font-size: 1.5rem;
+    }
+
+    .feature-description {
+        font-size: 0.9375rem;
+    }
+
+}
+
+/* ==========================================================================
+   SERVICES SECTION
+   ========================================================================== */
+
+.services-section {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+.services-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.services-title {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #000;
+    margin: 0 0 16px 0;
+}
+
+.services-subtitle {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.service-item {
+    text-align: center;
+    padding: 20px 10px;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border: 2px solid #FFDD35;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    transition: all 0.3s ease;
+}
+
+.service-icon i {
+    font-size: 1.75rem;
+    color: #FFDD35;
+}
+
+.service-item:hover .service-icon {
+    background-color: #FFDD35;
+    transform: scale(1.1);
+}
+
+.service-item:hover .service-icon i {
+    color: #000;
+}
+
+.service-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+    margin: 0 0 8px 0;
+}
+
+.service-desc {
+    font-size: 0.8125rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Responsive - Services */
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .service-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .service-icon i {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-section {
+        padding: 60px 0;
+    }
+
+    .services-header {
+        margin-bottom: 40px;
+    }
+
+    .services-title {
+        font-size: 1.75rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .service-item {
+        padding: 20px;
+    }
+}
+
+/* ==========================================================================
+   APP DOWNLOAD SECTION
+   ========================================================================== */
+
+.app-download-section {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+}
+
+.download-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 50px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.download-content {
+    flex: 1;
+}
+
+.download-title {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: #000;
+    margin: 0 0 20px 0;
+    line-height: 1.3;
+}
+
+.download-text {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.download-qr {
+    flex-shrink: 0;
+}
+
+.download-qr img {
+    width: 180px;
+    height: 180px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Responsive - Download Section */
+@media (max-width: 768px) {
+    .download-card {
+        flex-direction: column;
+        padding: 40px 30px;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .download-title {
+        font-size: 1.5rem;
+    }
+
+    .download-qr img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* ==========================================================================
+   BUSINESS PAGE BUTTON OVERRIDE
+   ========================================================================== */
+
+/* Smaller padding and gap for "Voltar para o início" button */
+.btn-open-account {
+    padding: 8px 18px !important;
+    gap: 4px !important;
+    font-size: 0.8125rem !important;
+}

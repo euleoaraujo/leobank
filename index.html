@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leobank</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="sticky-header-wrapper">
+        <header class="auribank-header">
+            <div class="container">
+                <!-- Coluna 1: Logo -->
+                <div class="logo-column">
+                    <a href="#" class="logo">
+                        <img src="assets/img/logo-leobank.png" alt="Leobank" class="logo-img">
+                    </a>
+                </div>
+                <!-- Coluna 2 (Spacer) is handled by auto margins/flex-grow in CSS -->
+
+                <!-- Group Wrapper for Login elements to align them right -->
+                <div class="header-actions">
+                    <!-- Wrapper com borda dourada -->
+                    <div class="login-wrapper">
+                        <!-- Coluna 2: Acesse sua conta -->
+                        <div class="login-label-column">
+                            <span>Acesse sua conta</span>
+                        </div>
+
+                        <!-- Novo Select: Tipo de Conta -->
+                        <div class="input-column type-column">
+                            <!-- Select Nativo (Visível apenas no Mobile) -->
+                            <select id="select-tipo-conta" class="mobile-only-select" aria-label="Tipo de Conta">
+                                <option value="pf">Pessoa Física</option>
+                                <option value="pj">Pessoa Jurídica</option>
+                            </select>
+
+                            <!-- Custom Select (Visível apenas no Desktop via CSS) -->
+                            <div class="custom-select" id="custom-select-desktop">
+                                <div class="select-trigger">
+                                    <span id="custom-select-value">Pessoa Física</span>
+                                    <i class="ph ph-caret-down"></i>
+                                </div>
+                                <div class="options-container">
+                                    <div class="option selected" data-value="pf">Pessoa Física</div>
+                                    <div class="option" data-value="pj">Pessoa Jurídica</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Grupo PJ: Agência e Conta -->
+                        <div id="pj-inputs" class="inputs-group" style="display: none;">
+                            <span class="input-separator">|</span>
+
+                            <div class="input-column agency-column">
+                                <input type="text" id="agencia" placeholder="Agência" aria-label="Agência"
+                                    maxlength="4">
+                            </div>
+
+                            <span class="input-separator">|</span>
+
+                            <div class="input-column account-column">
+                                <input type="text" id="conta" placeholder="Conta" aria-label="Conta" maxlength="12">
+                            </div>
+                        </div>
+
+                        <!-- Grupo PF: CPF -->
+                        <div id="pf-inputs" class="inputs-group" style="display: flex;">
+                            <span class="input-separator">|</span>
+
+                            <div class="input-column cpf-column">
+                                <input type="text" id="cpf" placeholder="Insira seu CPF" aria-label="CPF"
+                                    maxlength="14">
+                            </div>
+                        </div>
+
+                        <!-- Botão Entrar (Comum a ambos) -->
+                        <button class="btn-enter" aria-label="Entrar">
+                            <span>Entrar</span>
+                            <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Coluna 5: Botão Abra sua conta - MOVED OUTSIDE header-actions -->
+                <div class="cta-column">
+                    <a href="abra-sua-conta.html" class="btn-open-account"><span>Abra sua conta</span></a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <div class="hamburger-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </header>
+
+        <nav class="sub-header">
+            <div class="container sub-header-container-mobile">
+                <button class="nav-arrow left-arrow" aria-label="Scroll Left">
+                    <i class="ph ph-caret-left"></i>
+                </button>
+                <ul class="sub-header-menu">
+                    <li><a href="#seguros">Seguros</a></li>
+                    <li><a href="#cartoes">Cartão de crédito</a></li>
+                    <li><a href="#investimentos">Investimentos</a></li>
+                    <li><a href="#emprestimos">Empréstimos</a></li>
+                    <li><a href="educacao-financeira.html">Educação financeira</a></li>
+                </ul>
+                <button class="nav-arrow right-arrow" aria-label="Scroll Right">
+                    <i class="ph ph-caret-right"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Swiper Slider Section (Single Premium Slide) -->
+        <section class="hero-slider swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide: PJ (Tema Amarelo) -->
+                <div class="swiper-slide hero-slide slide-business">
+                    <div class="container">
+                        <div class="business-content">
+                            <div class="business-info">
+                                <span class="business-tag">SOLUÇÕES CORPORATIVAS</span>
+                                <h1 class="hero-title business-title">Impulsione o seu negócio.</h1>
+                                <p class="hero-subtitle business-subtitle">
+                                    Soluções inteligentes de crédito e gestão para fazer sua empresa chegar mais longe.
+                                </p>
+
+                                <div class="hero-actions">
+                                    <a href="empresas.html" class="btn-primary-hero dark-btn">Leobank para Empresas</a>
+                                    <a href="abra-sua-conta.html" class="btn-secondary-hero dark-link">Abra sua conta PJ
+                                        <i class="ph ph-caret-right"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="hero-visual">
+                                <div class="floating-element element-4">
+                                    <i class="ph ph-shield-check"></i>
+                                    <span>Segurança Prime</span>
+                                </div>
+                                <div class="floating-element element-5">
+                                    <i class="ph ph-globe"></i>
+                                    <span>Global PJ</span>
+                                </div>
+                                <div class="business-main-element">
+                                    <img src="assets/img/foto-celular.png" alt="Leobank App Interface"
+                                        class="business-app-mockup">
+                                </div>
+                                <div class="floating-element element-1">
+                                    <i class="ph ph-chart-line-up"></i>
+                                    <span>Crescimento 40%</span>
+                                </div>
+                                <div class="floating-element element-2">
+                                    <i class="ph ph-briefcase"></i>
+                                    <span>Conta PJ Grátis</span>
+                                </div>
+                                <div class="floating-element element-3">
+                                    <i class="ph ph-hand-coins"></i>
+                                    <span>Crédito Facil</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Slide: Cashback -->
+                <div class="swiper-slide hero-slide slide-cashback">
+                    <div class="container">
+                        <div class="cashback-content">
+                            <div class="cashback-info">
+                                <span class="cashback-tag">PROGRAMA DE RECOMPENSAS</span>
+                                <h2 class="cashback-title">Ganhe dinheiro de volta em cada compra</h2>
+                                <p class="cashback-desc">
+                                </p>
+
+                                <div class="cashback-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-number">5%</div>
+                                        <div class="stat-label">Cashback máximo</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">R$ 500</div>
+                                        <div class="stat-label">Média por mês</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">1M+</div>
+                                        <div class="stat-label">Clientes ativos</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="cashback-visual">
+                                <div class="cashback-circle">
+                                    <div class="circle-content">
+                                        <i class="ph ph-wallet"></i>
+                                        <span class="circle-value">+R$ 2.450</span>
+                                        <span class="circle-label">cashback este ano</span>
+                                    </div>
+                                </div>
+                                <div class="floating-badge badge-1">
+                                    <i class="ph ph-shopping-cart"></i>
+                                    <span>+R$ 15 cashback</span>
+                                </div>
+
+                                <div class="floating-badge badge-3">
+                                    <i class="ph ph-gift"></i>
+                                    <span>Bônus de R$ 50</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Swiper UI Elements - Apenas Pagination -->
+            <div class="swiper-pagination"></div>
+        </section>
+    </main>
+
+    <!-- Services Section (Estilo Itaú) -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title reveal">Resolva as questões do dia a dia</h2>
+            <div class="services-grid">
+                <!-- Card 1: Boleto -->
+                <a href="boleto.html" class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="ph ph-barcode"></i>
+                    </div>
+                    <h3 class="service-name">Boleto</h3>
+                    <p class="service-desc">Emita 2ª via de boletos Leobank</p>
+                </a>
+
+                <!-- Card 2: Cartão -->
+                <a href="desbloqueio-cartao.html" class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="ph ph-credit-card"></i>
+                    </div>
+                    <h3 class="service-name">Desbloqueio de cartão</h3>
+                    <p class="service-desc">Saiba como fazer com segurança</p>
+                </a>
+
+                <!-- Card 3: App -->
+                <a href="aplicativos.html" class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="ph ph-device-mobile"></i>
+                    </div>
+                    <h3 class="service-name">Aplicativos</h3>
+                    <p class="service-desc">Baixe os apps do Leobank</p>
+                </a>
+
+                <!-- Card 4: Fatura -->
+                <a href="fatura-digital.html" class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="ph ph-file-text"></i>
+                    </div>
+                    <h3 class="service-name">Fatura digital</h3>
+                    <p class="service-desc">Receba a fatura no seu e-mail</p>
+                </a>
+
+                <!-- Card 5: Comprovantes -->
+                <a href="comprovantes.html" class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="ph ph-receipt"></i>
+                    </div>
+                    <h3 class="service-name">Comprovantes</h3>
+                    <p class="service-desc">Gere uma 2ª via do comprovante</p>
+                </a>
+
+                <!-- Card 6: Atendimento -->
+                <a href="atendimento.html" class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="ph ph-question"></i>
+                    </div>
+                    <h3 class="service-name">Atendimento</h3>
+                    <p class="service-desc">Conheça nossos canais de ajuda</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Seção 3: Seguros (Premium Glass) -->
+    <section class="insurance-section" id="seguros">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Proteção completa <span class="highlight-yellow">para o que importa</span>
+                </h2>
+                <p class="section-subtitle">Seguros transparentes, sem letras miúdas e com contratação 100% digital.</p>
+            </div>
+
+            <div class="insurance-grid">
+                <!-- Card 1: Vida -->
+                <div class="insurance-card reveal">
+                    <div class="card-glow"></div>
+                    <div class="insurance-icon">
+                        <i class="ph ph-heartbeat"></i>
+                    </div>
+                    <h3 class="insurance-title">Seguro Vida</h3>
+                    <p class="insurance-desc">Proteção financeira para você e quem você ama. Cobertura personalizável a
+                        partir de R$ 9/mês.</p>
+                    <ul class="insurance-features">
+                        <li><i class="ph ph-check"></i> Sem carência</li>
+                        <li><i class="ph ph-check"></i> Telemedicina Einstein</li>
+                    </ul>
+                    <a href="seguros.html#vida" class="btn-text-yellow">Simular agora <i
+                            class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 2: Auto -->
+                <div class="insurance-card featured reveal">
+                    <div class="card-glow"></div>
+                    <div class="floating-badge-card">Mais contratado</div>
+                    <div class="insurance-icon">
+                        <i class="ph ph-car"></i>
+                    </div>
+                    <h3 class="insurance-title">Seguro Auto</h3>
+                    <p class="insurance-desc">Seu carro protegido 24h por dia. Guincho ilimitado e pagamento direto no
+                        cartão sem ocupar limite.</p>
+                    <ul class="insurance-features">
+                        <li><i class="ph ph-check"></i> Carro reserva</li>
+                        <li><i class="ph ph-check"></i> Reparo de vidros</li>
+                    </ul>
+                    <a href="seguros.html#auto" class="btn-text-yellow">Simular agora <i
+                            class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 3: Celular -->
+                <div class="insurance-card reveal">
+                    <div class="card-glow"></div>
+                    <div class="insurance-icon">
+                        <i class="ph ph-device-mobile-camera"></i>
+                    </div>
+                    <h3 class="insurance-title">Seguro Celular</h3>
+                    <p class="insurance-desc">Cobertura contra roubo, furto qualificado e danos acidentais. Pix na hora
+                        em caso de sinistro aprovado.</p>
+                    <ul class="insurance-features">
+                        <li><i class="ph ph-check"></i> Cobertura internacional</li>
+                        <li><i class="ph ph-check"></i> Quebra de tela</li>
+                    </ul>
+                    <a href="seguros.html#celular" class="btn-text-yellow">Simular agora <i
+                            class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 4: Residencial (New Rich Content) -->
+                <div class="insurance-card reveal">
+                    <div class="card-glow"></div>
+                    <div class="insurance-icon">
+                        <i class="ph ph-house-line"></i>
+                    </div>
+                    <h3 class="insurance-title">Seguro Residencial</h3>
+                    <p class="insurance-desc">Assistência 24h para sua casa. Encanador, eletricista e proteção contra
+                        incêndios.</p>
+                    <ul class="insurance-features">
+                        <li><i class="ph ph-check"></i> Assistência 24h</li>
+                        <li><i class="ph ph-check"></i> Danos elétricos</li>
+                    </ul>
+                    <a href="seguros.html#residencial" class="btn-text-yellow">Simular agora <i
+                            class="ph ph-arrow-right"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 1: Cartões LeoBank -->
+    <section class="cards-section" id="cartoes">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Cartões que combinam com você</h2>
+                <p class="section-subtitle">Escolha o cartão perfeito para o seu momento de vida</p>
+            </div>
+
+            <div class="cards-showcase">
+                <!-- Cartão Gold -->
+                <div class="credit-card-item reveal">
+                    <div class="card-glow"></div>
+                    <div class="card-visual gold-card">
+                        <div class="card-chip"></div>
+                        <div class="card-contactless">
+                            <i class="ph ph-broadcast"></i>
+                        </div>
+                        <div class="card-brand">LEOBANK</div>
+                        <div class="card-tier">GOLD</div>
+                    </div>
+                    <h3 class="card-name">LeoBank Gold</h3>
+                    <p class="card-desc">Benefícios exclusivos e pontos em dobro</p>
+                    <ul class="card-benefits">
+                        <li><i class="ph ph-check"></i> Anuidade grátis no 1º ano</li>
+                        <li><i class="ph ph-check"></i> 2 pontos por dólar</li>
+                        <li><i class="ph ph-check"></i> Salas VIP</li>
+                    </ul>
+                    <a href="cartoes.html#gold" class="btn-text-yellow">Solicitar agora <i
+                            class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Cartão Platinum -->
+                <div class="credit-card-item featured reveal">
+                    <div class="card-glow"></div>
+                    <div class="floating-badge-card"><i class="ph ph-star"></i> Mais popular</div>
+                    <div class="card-visual platinum-card">
+                        <div class="card-chip"></div>
+                        <div class="card-contactless">
+                            <i class="ph ph-broadcast"></i>
+                        </div>
+                        <div class="card-brand">LEOBANK</div>
+                        <div class="card-tier">PLATINUM</div>
+                    </div>
+                    <h3 class="card-name">LeoBank Platinum</h3>
+                    <p class="card-desc">Para quem busca muito mais vantagens</p>
+                    <ul class="card-benefits">
+                        <li><i class="ph ph-check"></i> Cashback de até 3%</li>
+                        <li><i class="ph ph-check"></i> 3 pontos por dólar</li>
+                        <li><i class="ph ph-check"></i> Seguro Viagem</li>
+                    </ul>
+                    <a href="cartoes.html#platinum" class="btn-text-yellow">Solicitar agora <i
+                            class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Cartão Black -->
+                <div class="credit-card-item reveal">
+                    <div class="card-glow"></div>
+                    <div class="card-visual black-card">
+                        <div class="card-chip"></div>
+                        <div class="card-contactless">
+                            <i class="ph ph-broadcast"></i>
+                        </div>
+                        <div class="card-brand">LEOBANK</div>
+                        <div class="card-tier">INFINITE</div>
+                    </div>
+                    <h3 class="card-name">LeoBank Infinite</h3>
+                    <p class="card-desc">O máximo em exclusividade e conforto</p>
+                    <ul class="card-benefits">
+                        <li><i class="ph ph-check"></i> Pontos que não expiram</li>
+                        <li><i class="ph ph-check"></i> Concierge Pessoal</li>
+                        <li><i class="ph ph-check"></i> Acesso ilimitado VIP</li>
+                    </ul>
+                    <a href="cartoes.html#infinite" class="btn-text-yellow">Solicitar agora <i
+                            class="ph ph-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Investimentos -->
+    <!-- Seção: Investimentos (Novo Layout Rico) -->
+    <section class="investments-section" id="investimentos">
+        <div class="container">
+            <!-- Parte 1: Banner Hero (Estilo Feature) -->
+            <div class="invest-hero-wrapper reveal">
+
+
+                <div class="invest-hero-visual">
+                    <h2 class="invest-mobile-title"><span class="highlight">Leobank</span> <br> investimentos</h2>
+                    <div class="invest-mobile-arrow"><i class="ph ph-arrow-down"></i></div>
+                    <div class="invest-img-mask">
+                        <img src="assets/img/invest-girl-new.jpg" alt="Mulher usando app de investimentos"
+                            class="invest-hero-img">
+                    </div>
+                </div>
+
+                <div class="invest-hero-content">
+                    <h2 class="invest-hero-title">Abra sua conta e acelere seus rendimentos com o <span
+                            class="highlight-yellow">CDB Leobank</span></h2>
+
+                    <p class="invest-hero-desc">
+                        É isso mesmo: mais rendimento, mais praticidade e zero complicação. É a sua chance de começar a
+                        investir com muito mais retorno, tudo direto no app, de um jeito simples e seguro.
+                    </p>
+
+                    <div class="invest-actions">
+                        <a href="investimentos-leobank.html" class="btn-primary-large btn-invest-yellow">Leobank invest
+                            <i class="ph ph-arrow-right"></i></a>
+                        <p class="invest-note">*Consulte as condições da oferta.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 2: Painéis de Opções (Estilo Lista Horizontal) -->
+
+        </div>
+    </section>
+
+    <!-- Seção: Empréstimos -->
+    <section class="loans-section" id="emprestimos">
+        <div class="container">
+            <div class="loans-wrapper reveal">
+                <div class="loans-content">
+                    <h2 class="loans-title">Empréstimos Leobank, seguro e fácil</h2>
+                    <p class="loans-desc">
+                        Crédito pessoal, financiamento e consignado com as melhores taxas do mercado.
+                        Simule agora e tenha a aprovação em minutos.
+                    </p>
+
+                    <div class="loans-minicards-grid">
+                        <!-- Minicard 1 -->
+                        <div class="loan-minicard">
+                            <div class="minicard-icon"><i class="ph ph-hand-coins"></i></div>
+                            <h4 class="minicard-title">Antecipação FGTS</h4>
+                            <p class="minicard-desc">Use seu saldo FGTS agora</p>
+                        </div>
+
+                        <!-- Minicard 2 -->
+                        <div class="loan-minicard">
+                            <div class="minicard-icon"><i class="ph ph-money"></i></div>
+                            <h4 class="minicard-title">Empréstimo pessoal</h4>
+                            <p class="minicard-desc">Crédito rápido e fácil</p>
+                        </div>
+
+                        <!-- Minicard 3 -->
+                        <div class="loan-minicard">
+                            <div class="minicard-icon"><i class="ph ph-users-three"></i></div>
+                            <h4 class="minicard-title">Consórcio</h4>
+                            <p class="minicard-desc">Planeje suas conquistas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loans-app-cta small-cta">
+                    <p class="loans-app-text">Baixe o app e simule agora</p>
+                    <div class="loans-store-buttons">
+                        <a href="#" class="store-btn apple small-btn">
+                            <i class="bi bi-apple"></i>
+                            <div class="store-text">
+                                <span>Baixar na</span>
+                                <span>App Store</span>
+                            </div>
+                        </a>
+                        <a href="#" class="store-btn google small-btn">
+                            <i class="bi bi-google-play"></i>
+                            <div class="store-text">
+                                <span>DISPONÍVEL NO</span>
+                                <span>Google Play</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="loans-visual">
+                    <div class="loans-img-mask">
+                        <img src="assets/img/loans-hero-v2.png" alt="Leobank Empréstimos" class="loans-hero-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Educação Financeira -->
+    <section class="financial-section" id="educacao-financeira">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="financial-title">Educação financeira pra quem é Leobank</h2>
+                <p class="financial-subtitle">
+                    O Poupar para Render te apoia no bom uso do dinheiro, organização do orçamento, ferramentas de apoio
+                    no dia a dia e muito mais.
+                </p>
+                <div class="mobile-financial-cta">
+                    <a href="#" class="btn-outline-yellow">Começar agora ! <i class="ph ph-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="financial-grid">
+                <!-- Card 1: Planejamento -->
+                <a href="educacao-financeira.html#planejamento" class="financial-card reveal">
+                    <div class="financial-icon">
+                        <i class="ph ph-chart-line-up"></i>
+                    </div>
+                    <h3 class="financial-card-title">Planeje seus gastos</h3>
+                    <p class="financial-card-desc">
+                        Aprenda a organizar suas finanças mensais de forma simples e eficaz, garantindo que o seu
+                        dinheiro dure o mês todo.
+                    </p>
+                </a>
+
+                <!-- Card 2: Investimentos -->
+                <a href="educacao-financeira.html#investir" class="financial-card reveal">
+                    <div class="financial-icon">
+                        <i class="ph ph-piggy-bank"></i>
+                    </div>
+                    <h3 class="financial-card-title">Comece a Investir</h3>
+                    <p class="financial-card-desc">
+                        Descubra como fazer o seu dinheiro render mais com opções de investimentos seguras e rentáveis
+                        para todos os perfis.
+                    </p>
+                </a>
+
+                <!-- Card 3: Dívidas -->
+                <a href="educacao-financeira.html#dividas" class="financial-card reveal">
+                    <div class="financial-icon">
+                        <i class="ph ph-receipt"></i>
+                    </div>
+                    <h3 class="financial-card-title">Saia das Dívidas</h3>
+                    <p class="financial-card-desc">
+                        Estratégias práticas para negociar e quitar suas dívidas, recuperando sua liberdade financeira e
+                        tranquilidade.
+                    </p>
+                </a>
+
+                <!-- Card 4: Segurança -->
+                <a href="educacao-financeira.html#seguranca" class="financial-card reveal">
+                    <div class="financial-icon">
+                        <i class="ph ph-shield-check"></i>
+                    </div>
+                    <h3 class="financial-card-title">Segurança Digital</h3>
+                    <p class="financial-card-desc">
+                        Dicas essenciais para proteger sua conta e seus dados contra golpes e fraudes no mundo digital.
+                    </p>
+                </a>
+
+                <!-- Card 5: Crédito Consciente -->
+                <a href="educacao-financeira.html#credito" class="financial-card reveal">
+                    <div class="financial-icon">
+                        <i class="ph ph-credit-card"></i>
+                    </div>
+                    <h3 class="financial-card-title">Crédito Consciente</h3>
+                    <p class="financial-card-desc">
+                        Entenda como usar o cartão de crédito e empréstimos a seu favor, sem comprometer o seu orçamento
+                        futuro.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Profissional -->
+    <footer class="leobank-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <a href="#" class="footer-logo">
+                        <img src="assets/img/logo-leobank.png" alt="Leobank" class="logo-img">
+                    </a>
+                    <p class="brand-tagline">Excelência e solidez para o seu patrimônio.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="ph ph-x-logo"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Para Você</h4>
+                    <ul>
+                        <li><a href="abra-sua-conta.html">Conta Digital</a></li>
+                        <li><a href="cartoes.html">Cartão de Crédito</a></li>
+                        <li><a href="investimentos-leobank.html">Investimentos</a></li>
+                        <li><a href="seguros.html">Seguros</a></li>
+                        <li><a href="#">Empréstimos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Para Empresas</h4>
+                    <ul>
+                        <li><a href="empresas.html">Conta PJ</a></li>
+                        <li><a href="empresas.html#credito">Capital de Giro</a></li>
+                        <li><a href="empresas.html#servicos">Folha de Pagamento</a></li>
+                        <li><a href="empresas.html#servicos">Cartão Corporativo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Sobre o Leobank</a></li>
+                        <li><a href="#">Carreiras</a></li>
+                        <li><a href="#">Relatórios</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <div class="security-area">
+                    <span class="security-label">Segurança e Certificações</span>
+                    <div class="security-badges">
+                        <div class="badge-item">
+                            <i class="ph ph-shield-check"></i>
+                            <span>PCI DSS<br><small>Certified</small></span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="ph ph-lock-key"></i>
+                            <span>Dados<br><small>Criptografados</small></span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="ph ph-bank"></i>
+                            <span>Autorizado<br><small>Banco Central</small></span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="ph ph-check-circle"></i>
+                            <span>Site<br><small>Verificado</small></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>Leobank Pagamentos S.A. | CNPJ: 00.000.000/0001-00</p>
+                    <p>Av. Brigadeiro Faria Lima, 0000 - São Paulo, SP - CEP 00000-000</p>
+                    <p class="copyright">&copy; 2025 Leobank. Todos os direitos reservados.</p>
+                </div>
+                <div class="app-downloads">
+                    <a href="#" class="app-btn"><i class="ph-fill ph-apple-logo"></i> App Store</a>
+                    <a href="#" class="app-btn"><i class="ph-fill ph-google-play-logo"></i> Google Play</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
